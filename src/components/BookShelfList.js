@@ -1,7 +1,4 @@
-/**
- * Created by anirudh.r on 08/07/17.
- */
-import React, {Component} from 'react';
+import React from 'react';
 import BookShelf from './BookShelf.js';
 import {Link} from 'react-router-dom';
 
