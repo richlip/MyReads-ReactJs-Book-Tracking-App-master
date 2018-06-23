@@ -1,8 +1,4 @@
-/**
- * Created by anirudh.r on 08/07/17.
- */
-
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 class Book extends Component {
@@ -11,7 +7,7 @@ class Book extends Component {
       id: PropTypes.string,
       imageLinks: PropTypes.object.isRequired,
       title: PropTypes.string.isRequired,
-      authors: PropTypes.array.isRequired,
+      authors: PropTypes.array,
       shelf: PropTypes.string.isRequired,
     }),
     onChangeShelf: PropTypes.func.isRequired,
