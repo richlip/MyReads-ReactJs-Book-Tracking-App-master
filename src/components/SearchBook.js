@@ -5,14 +5,13 @@ import Book from './Book'
 
 class SearchBook extends Component {
   
-state = {
-    searchedBooks: []
-  }
+state = {searchedBooks: []}
 
   search = (event) => {
     if (event.target.value.length < 1) {
       return true;
     }
+    
     BooksAPI.search(event.target.value, 25).then((books) => {
       if (books.error === undefined) {
         this.setState({searchedBooks: books});

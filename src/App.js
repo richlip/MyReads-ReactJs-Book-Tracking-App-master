@@ -1,16 +1,15 @@
 import React from 'react'
 import * as BooksAPI from './components/BooksAPI'
 import './App.css'
-/**import BookShelfList from "./components/BookShelfList";**/
+//import BookShelfList from "./components/BookShelfList"
 import Bookshelf from './components/BookShelf'
 import SearchBook from './components/SearchBook'
 import {Route, Link} from 'react-router-dom'
 
 class BooksApp extends React.Component {
-  state = {
-    Books: []
-  }
+  state = {Books: []}
 
+//Load books
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({Books: books})
@@ -36,6 +35,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
+
+              /**check category - maybe refinement**/
+
                <Bookshelf title='Currently Reading' books={Books.filter((book) => book.shelf === 'currentlyReading')} onChangeShelf={this.changeShelf} />
                <Bookshelf title='Want to Read' books={Books.filter((book) => book.shelf === 'wantToRead')} onChangeShelf={this.changeShelf} />
                <Bookshelf title='Read' books={Books.filter((book) => book.shelf === 'read')} onChangeShelf={this.changeShelf} />
@@ -47,6 +49,7 @@ class BooksApp extends React.Component {
           </div>
         )}
         />
+        
         <Route path='/SearchBook' render={({history})=>(
          <SearchBook onShelfSelect={(event)=>{
             this.changeShelf(event)
