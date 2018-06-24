@@ -36,9 +36,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <Bookshelf title='Currently Reading' books={Books.filter((book) => book.shelf === 'currentlyReading')} onChangeShelf={this.changeShelf} />
-                <Bookshelf title='Want to Read' books={Books.filter((book) => book.shelf === 'wantToRead')} onChangeShelf={this.changeShelf} />
-                <Bookshelf title='Read' books={Books.filter((book) => book.shelf === 'read')} onChangeShelf={this.changeShelf} />
+               <Bookshelf title='Currently Reading' books={Books.filter((book) => book.shelf === 'currentlyReading')} onChangeShelf={this.changeShelf} />
+               <Bookshelf title='Want to Read' books={Books.filter((book) => book.shelf === 'wantToRead')} onChangeShelf={this.changeShelf} />
+               <Bookshelf title='Read' books={Books.filter((book) => book.shelf === 'read')} onChangeShelf={this.changeShelf} />
               </div>
             </div>
             <div className="open-search">
@@ -48,10 +48,11 @@ class BooksApp extends React.Component {
         )}
         />
         <Route path='/SearchBook' render={({history})=>(
-      <SearchBook onShelfSelect={(event)=>{
+         <SearchBook onShelfSelect={(event)=>{
             this.changeShelf(event)
             history.push('/')
-          }}/>        )}
+          }}/>        
+          )}
         />
       </div>
     )

@@ -8,6 +8,7 @@ class SearchBook extends Component {
 state = {
     searchedBooks: []
   }
+
   search = (event) => {
     if (event.target.value.length < 1) {
       return true;
@@ -20,6 +21,7 @@ state = {
       }
     });
   }
+
   render () {
     const { searchedBooks } = this.state;
     return (
@@ -27,7 +29,7 @@ state = {
         <div className="search-books-bar">
           <Link className="close-search" to="/">Close</Link>
           <div className="search-books-input-wrapper">
-            <input type="text" placeholder="Search by title or author" onChange={this.SearchBook}/>
+            <input type="text" placeholder="Search by title or author" onChange={this.search}/>
           </div>
         </div>
         <div className="search-books-results">
