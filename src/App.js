@@ -42,24 +42,16 @@ class BooksApp extends React.Component {
               </div>
             </div>
             <div className="open-search">
-              <Link to='/search'>Add a book</Link>
+              <Link to='/SearchBook'>Add a book</Link>
             </div>
           </div>
         )}
         />
-        <Route path='/search' render={({history})=>(
-          <div className="search-books">
-            <div className="search-books-bar">
-              <Link className="close-search" to="/">Close</Link>
-              <div className="search-books-input-wrapper">
-                <input type="text" placeholder="Search by title or author"/>
-              </div>
-            </div>
-            <div className="search-books-results">
-              <ol className="books-grid"></ol>
-            </div>
-          </div>
-        )}
+        <Route path='/SearchBook' render={({history})=>(
+      <SearchBook onShelfSelect={(event)=>{
+            this.changeShelf(event)
+            history.push('/')
+          }}/>        )}
         />
       </div>
     )
