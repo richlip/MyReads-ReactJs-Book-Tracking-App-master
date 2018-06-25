@@ -24,6 +24,12 @@ class BooksApp extends React.Component {
     });
   }
 
+        /**check category - maybe refinement
+        /*Login for saving "myreads"
+        /*api to book directory - https://developers.google.com/books/docs/v1/using
+        /* api key AIzaSyCqO14x2K62xXut9MUql1savyawBES43ao
+        **/
+
   render() {
     const { Books } = this.state;
     return (
@@ -36,7 +42,6 @@ class BooksApp extends React.Component {
             <div className="list-books-content">
               <div>
 
-              /**check category - maybe refinement**/
 
                <Bookshelf title='Currently Reading' books={Books.filter((book) => book.shelf === 'currentlyReading')} onChangeShelf={this.changeShelf} />
                <Bookshelf title='Want to Read' books={Books.filter((book) => book.shelf === 'wantToRead')} onChangeShelf={this.changeShelf} />
