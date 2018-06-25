@@ -15,7 +15,8 @@ class Book extends Component {
 
   render () {
     const { book, onChangeShelf } = this.props;
-    return (
+
+     return (
       <li>
         <div className="book">
           <div className="book-top">
@@ -30,6 +31,7 @@ class Book extends Component {
               </select>
             </div>
           </div>
+          
           <div className="book-title">{book.title}</div>
           {book.authors.map((author) => (
             <div key={author} className="book-authors">{author}</div>
