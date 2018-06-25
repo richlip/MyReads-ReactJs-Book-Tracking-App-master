@@ -27,7 +27,7 @@ class BooksApp extends React.Component {
         /**check category - maybe refinement
         /*Login for saving "myreads"
         /*api to book directory - https://developers.google.com/books/docs/v1/using
-        /* api key AIzaSyCqO14x2K62xXut9MUql1savyawBES43ao
+        /* api key *************x2K62xXut9MUql1savyawBES43ao
         **/
 
   render() {
